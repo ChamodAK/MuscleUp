@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="input-group">
-                        <input type="text" class="form-control" id = "userid" placeholder="Enter UserID:"value="<?php echo set_value('userid'); ?>">
+                        <input type="text" class="form-control" name = "userid" placeholder="Enter UserID:" value="<?php echo set_value('userid'); ?>">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">DELETE!</button>
                             </span>

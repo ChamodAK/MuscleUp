@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f29429da-77dd-4352-956a-f3806c23cc56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/admin/admin_manage_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/admin/admin_schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/User_Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/User_Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Model_User.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Model_User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/admin_enquiries.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/admin_forum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/admin_frame.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/admin_frame.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/admin_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/admin_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/user/my_schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/user/my_schedule.php" afterDir="false" />
-    </list>
+    <list default="true" id="f29429da-77dd-4352-956a-f3806c23cc56" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +64,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="31" />
+          <entry key="php" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="31" />
+          <entry key="PHP" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -154,7 +142,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/admin_main.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -167,6 +155,11 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/admin_manage_users.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -347,12 +340,12 @@
       <workItem from="1543025168071" duration="7327000" />
       <workItem from="1543260578395" duration="6552000" />
       <workItem from="1543283928088" duration="15165000" />
-      <workItem from="1543322174324" duration="8325000" />
+      <workItem from="1543322174324" duration="8431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39408000" />
+    <option name="totallyTimeSpent" value="39514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -570,9 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/admin_manage_users.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_Admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -638,6 +628,9 @@
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/admin_manage_users.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
