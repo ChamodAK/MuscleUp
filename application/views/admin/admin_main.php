@@ -7,7 +7,6 @@ if($this->session->flashdata('msg')) {
     echo $this->session->flashdata('msg');
 }
 ?>
-
     <div class="col-md-9">
         <div class="card">
             <div class="card">

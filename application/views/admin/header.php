@@ -2,12 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php
-if($this->session->userdata('flag')!='a') {
-    redirect('Home/login');
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -15,7 +9,7 @@ if($this->session->userdata('flag')!='a') {
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<?php echo base_url() ?>asset/images/Gym Logo.jpg">
+    <link rel="icon" href="<?php echo base_url('asset/images/logo_white.jpg') ?>">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -52,6 +46,9 @@ if($this->session->userdata('flag')!='a') {
                 </li>
             <?php endif; ?>
             <li class="nav-item">
+                <a class="nav-link <?php if($page=='classes'){echo " active";}?>" href="<?php echo base_url('index.php/home/classes') ?>">Classes & Time</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link <?php if($page=='articles'){echo " active";}?>" href="<?php echo base_url('index.php/home/articles') ?>">Articles</a>
             </li>
             <li class="nav-item">
@@ -80,7 +77,8 @@ if($this->session->userdata('flag')!='a') {
                 echo $this->session->userdata('username');
                 echo "</a>\n";
                 echo "<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
-                echo "<a class=\"dropdown-item\" href=\"#\">Profile</a>\n";
+                echo "<a class=\"dropdown-item\" href=\"". base_url('index.php/home/my_profile');
+                echo "\">Profile</a>\n";
                 echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/login/user_logout');
                 echo "\">Logout</a>\n";
                 echo " </div>";

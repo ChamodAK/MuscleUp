@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends CI_Controller {
+class Admin extends MY_Controller {
 
     public function index() {
         $this->load->view('admin/admin_main');
@@ -44,14 +44,6 @@ class Admin extends CI_Controller {
             echo "Something went wrong !";
         }
 
-    }
-
-    public function admin_forum() {
-        $this->load->view('admin/admin_forum');
-    }
-
-    public function admin_enquiries() {
-        $this->load->view('admin/admin_enquiries');
     }
 
     public function add_article() {
@@ -105,6 +97,176 @@ class Admin extends CI_Controller {
 
             }
 
+        }
+
+    }
+
+    public function admin_forum() {
+        $this->load->view('admin/admin_forum');
+    }
+
+    public function admin_enquiries() {
+        $this->load->view('admin/admin_enquiries');
+    }
+
+    public function notifications() {
+        $this->load->view('admin/notifications');
+    }
+
+    public function noti_all() {
+        $this->load->view('admin/noti_all');
+    }
+
+    public function noti_one() {
+        $this->load->view('admin/noti_one');
+    }
+
+    public function noti_all_send() {
+
+        $this->load->model('Model_Admin');
+        $result = $this->Model_Admin->get_all_emails();
+
+        $title = $this->input->post('title');
+        $content = $this->input->post('content');
+
+        foreach ($result as $email) {
+            $data[] = $email->email;
+        }
+
+        $result = $this->send_mail_to_list($data, $title, $content);
+
+        if($result) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Notifications Sent Successfully! </div>');
+            redirect('admin/notifications');
+        }
+        else {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Notifications Sending Failed! </div>');
+            redirect('admin/notifications');
+        }
+
+    }
+
+    public function noti_one_send() {
+
+        $title = $this->input->post('title');
+        $content = $this->input->post('content');
+        $email = $this->input->post('email');
+
+        $result = $this->send_mail($email, $title, $content);
+
+        if($result) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Notification Sent Successfully! </div>');
+            redirect('admin/notifications');
+        }
+        else {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Notification Sending Failed! </div>');
+            redirect('admin/notifications');
+        }
+
+    }
+
+    public function schedule() {
+
+        $this->load->model('Model_Admin');
+        $result['schedules'] = $this->Model_Admin->get_schedule();
+
+        if($result) {
+            $this->load->view('admin/schedule', $result);
+        }
+        else {
+            echo "OOps!! Something went wrong!";
+        }
+
+    }
+
+    public function add_schedule() {
+        $this->load->view('admin/add_schedule');
+    }
+
+    public function add_new_schedule() {
+
+        $id = $this->input->post('id');
+        $content = $this->input->post('content');
+        $days = $this->input->post('days');
+
+        $this->load->model('Model_Admin');
+        $result = $this->Model_Admin->add_new_schedule($id, $content, $days);
+
+        if($result) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Schedule Added Successfully! </div>');
+            redirect('admin/schedule');
+        }
+        else {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
+            redirect('admin/schedule');
+        }
+
+    }
+
+    public function edit_schedule($id) {
+
+        $this->load->model('Model_Admin');
+        $result = $this->Model_Admin->get_full_schedule($id);
+
+        if($result!=false) {
+
+            $data['schedule'] = array(
+                'id' => $id,
+                'content' => $result->content,
+                'daysPerWeek' => $result->daysPerWeek
+            );
+
+            $this->load->view('admin/edit_schedule', $data);
+
+        }
+        else {
+            echo "Something went wrong !";
+        }
+
+    }
+
+    public function add_edit_schedule() {
+
+        $id = $this->input->post('id');
+        $content = $this->input->post('content');
+        $days = $this->input->post('daysPerWeek');
+
+
+        $this->load->model('Model_Admin');
+        $result = $this->Model_Admin->add_edit_schedule($id, $content, $days);
+
+        if($result) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Schedule Added Successfully! </div>');
+            redirect('admin/schedule');
+        }
+        else {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
+            redirect('admin/schedule');
+        }
+
+    }
+
+    public function delete_schedule($id) {
+
+        $data['id'] = $id;
+        $this->load->view('admin/delete_schedule',$data);
+
+
+    }
+
+    public function delete_schedule_confirm($id) {
+
+
+        $this->load->model('Model_Admin');
+        $result = $this->Model_Admin->delete_schedule_confirm($id);
+
+        if($result) {
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Schedule Deleted Successfully! </div>');
+            redirect('admin/schedule');
+        }
+        else {
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
+            redirect('admin/schedule');
         }
 
     }

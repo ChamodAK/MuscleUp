@@ -2,12 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<?php
-if($this->session->userdata('loggedIn')!=1) {
-    redirect('Home/login');
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -51,6 +45,9 @@ if($this->session->userdata('loggedIn')!=1) {
                     <a class="nav-link <?php if($page=='dashboard'){echo " active";}?>" href="<?php echo base_url('index.php/admin'); ?>"> Dashboard <span class="sr-only">(current)</span></a>
                 </li>
             <?php endif; ?>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='classes'){echo " active";}?>" href="<?php echo base_url('index.php/home/classes') ?>">Classes & Time</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='articles'){echo " active";}?>" href="<?php echo base_url('index.php/home/articles') ?>">Articles</a>
             </li>

@@ -41,7 +41,10 @@ class Home extends CI_Controller {
 
     public function my_profile() {
         $this->load->view('user/my_profile_main');
+    }
 
+    public function classes() {
+        $this->load->view('classes');
     }
 
 }

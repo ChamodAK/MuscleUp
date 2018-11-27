@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="<?php echo base_url('index.php/home'); ?>">
         <img src="<?php echo base_url() ?>asset/images/Gym Logo.jpg" width="30" height="30" class="rounded-circle" alt="image">
-         Muscle Up
+        Muscle Up
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,6 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a class="nav-link <?php if($page=='dashboard'){echo " active";}?>" href="<?php echo base_url('index.php/admin'); ?>"> Dashboard <span class="sr-only">(current)</span></a>
                 </li>
             <?php endif; ?>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='classes'){echo " active";}?>" href="<?php echo base_url('index.php/home/classes') ?>">Classes & Time</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='articles'){echo " active";}?>" href="<?php echo base_url('index.php/home/articles') ?>">Articles</a>
             </li>
@@ -74,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo $this->session->userdata('username');
                 echo "</a>\n";
                 echo "<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
-                echo "<a class=\"dropdown-item\" href=\"#\">Profile</a>\n";
+                echo "<a class=\"dropdown-item\" href=\"". base_url('index.php/home/my_profile');
+                echo "\">Profile</a>\n";
                 echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/login/user_logout');
                 echo "\">Logout</a>\n";
                 echo " </div>";

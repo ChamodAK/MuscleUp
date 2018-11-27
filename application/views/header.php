@@ -19,9 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
     <title> Muscleup.lk </title>
 
 </head>
@@ -48,6 +45,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a class="nav-link <?php if($page=='dashboard'){echo " active";}?>" href="<?php echo base_url('index.php/admin'); ?>"> Dashboard <span class="sr-only">(current)</span></a>
                 </li>
             <?php endif; ?>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='classes'){echo " active";}?>" href="<?php echo base_url('index.php/home/classes') ?>">Classes & Time</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='articles'){echo " active";}?>" href="<?php echo base_url('index.php/home/articles') ?>">Articles</a>
             </li>
