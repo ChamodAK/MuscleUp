@@ -15,20 +15,20 @@ if($this->session->flashdata('msg')) {
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-feather"></i> 12</h4>
-                                <p>Wiki Contents</p>
+                                <h4><i class="fas fa-feather"></i><?php echo $article_count?></h4>
+                                <p>Articles</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card bg-light card-body dash-box">
                                 <h4><i class="fas fa-paper-plane"></i> 5</h4>
-                                <p>News</p>
+                                <p>Forum Posts</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-book"></i> 7</h4>
-                                <p>Articles</p>
+                                <h4><i class="fas fa-book"></i> <?php echo $article_count?></h4>
+                                <p>Enquiries</p>
                             </div>
                         </div>
                     </div>

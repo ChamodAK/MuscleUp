@@ -68,4 +68,9 @@ class Model_Article extends CI_Model
         $delete = $this->db->delete('article');
         return $delete ? true : false;
     }
+
+    public function count_articles() {
+        $query = $this->db->query("SELECT * FROM article;");
+        return $query->num_rows();
+    }
 }

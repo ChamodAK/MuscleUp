@@ -3,7 +3,11 @@
 class Admin extends MY_Controller {
 
     public function index() {
-        $this->load->view('admin/admin_main');
+
+        $this->load->model('Model_Article');
+        $article_count = $this->Model_Article->count_articles();
+        $data = array('article_count' => $article_count);
+        $this->load->view('admin/admin_main' , $data);
     }
 
     public function admin_articles() {

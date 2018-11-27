@@ -34,6 +34,11 @@ class Home extends CI_Controller {
         }
 
     }
+    public function get_photos() {
+        
+        $this->load->view('gallery');
+    
+}
 
     public function forum() {
         $this->load->view('forum');
