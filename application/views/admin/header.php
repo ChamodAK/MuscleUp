@@ -66,6 +66,9 @@ if($this->session->userdata('flag')!='a') {
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='success_stories'){echo " active";}?>" href="<?php echo base_url('index.php/home/success_stories') ?>">Success Stories</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='about_us'){echo " active";}?>" href="<?php echo base_url('index.php/home/about_us') ?>">About Us</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav navbar-right" style="margin-right: 10px;">
