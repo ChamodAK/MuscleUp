@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f29429da-77dd-4352-956a-f3806c23cc56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/views/admin/admin_articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/admin_articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/gallery.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,12 +66,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="34" />
+          <entry key="php" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="34" />
+          <entry key="PHP" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -89,21 +89,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/admin_frame.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/admin_articles.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
               <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/gallery.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -309,9 +305,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/views" />
       <recent name="$PROJECT_DIR$/application/views/user" />
       <recent name="$PROJECT_DIR$/application/views/admin" />
-      <recent name="$PROJECT_DIR$/application/views" />
       <recent name="C:\xampp\htdocs\MuscleUp\asset\images\article" />
       <recent name="C:\xampp\htdocs\MuscleUp\asset\images" />
     </key>
@@ -355,16 +351,15 @@
       <workItem from="1543025168071" duration="7327000" />
       <workItem from="1543260578395" duration="6552000" />
       <workItem from="1543283928088" duration="15165000" />
-      <workItem from="1543322174324" duration="8907000" />
+      <workItem from="1543322174324" duration="9056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39990000" />
+    <option name="totallyTimeSpent" value="40139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12847222" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -654,6 +649,9 @@
           <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/gallery.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
