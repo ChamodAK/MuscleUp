@@ -21,7 +21,7 @@ if($this->session->flashdata('msg')) {
                         </div>
                         <div class="col-md-4">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-paper-plane"></i> 5</h4>
+                                <h4><i class="fas fa-paper-plane"></i><?php echo $post_count?></h4>
                                 <p>Forum Posts</p>
                             </div>
                         </div>
