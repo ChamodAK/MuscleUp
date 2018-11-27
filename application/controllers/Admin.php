@@ -275,4 +275,65 @@ class Admin extends MY_Controller {
 
     }
 
+    public function admin_schedule() {
+        $this->load->view('admin/admin_schedule');
+    }
+
+    public function set_fitness_details(){
+        $this->form_validation->set_rules('id', 'UserID', 'trim|required|');
+        $this->form_validation->set_rules('weight', 'Weight', 'trim|required|');
+        $this->form_validation->set_rules('height', 'Height', 'trim|required|');
+        $this->form_validation->set_rules('attendence', 'Attendence', 'trim|required|');
+
+        if ($this->form_validation->run() == TRUE) {
+            $this->load->view('admin/admin_schedule');
+        }
+        else {
+
+            $id = $this->input->post('id');
+            $checked_date = $this->input->post('checked_date');
+            $attendence = $this->input->post('attendance');
+            $weight = $this->input->post('weight');
+            $height = $this->input->post('height');
+            $remark = $this->input->post('remark');
+            $schedule = $this->input->post('schedule');
+            $message = "You have successfully entered fittness details.";
+
+            $this->load->model('model_user');
+            $result = $this->model_user->insert_fitness_data();
+
+            if($result){
+                $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> $message </div>');
+                redirect('admin/admin_schedule');
+            }
+        }
+
+    }
+    public function admin_manage_users(){
+        $this->load->model('Model_User');
+        $result['userdata'] = $this->Model_User->fetch_users_data();
+
+        if($result){
+            $this->load->view('admin/admin_manage_users',$result);
+        }
+    }
+
+    public function delete_user(){
+        $userid = $this->input->post('userid');
+        $this->load->model('model_user');
+        $row = $this->model_user->delete_user($userid);
+
+
+        if($row!=0){
+            $m1 = "Deleted successfully";
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> $m1 </div>');
+            redirect('admin/admin_manage_users');
+        }
+        else{
+            $m2 = "Invalide UserID";
+            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> $m2 </div>');
+        }
+
+    }
+
 }

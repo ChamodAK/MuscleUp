@@ -19,8 +19,13 @@ class User_Profile extends MY_Controller {
     }
 
     public function my_schedule() {
+        $id = $this->session->userdata('id');
+        $this->load->model('Model_User');
+        $result['fitness'] = $this->Model_User->fetch_fitness_data($id);
 
-        $this->load->view('user/my_schedule');
+        if($result){
+            $this->load->view('user/my_schedule',$result);
+        }
 
     }
 

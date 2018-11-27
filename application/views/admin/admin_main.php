@@ -9,66 +9,39 @@ if($this->session->flashdata('msg')) {
 ?>
     <div class="col-md-9">
         <div class="card">
-            <div class="card">
-                <h4 class="card-header">Website Overview</h4>
-                <div class="card-body">
+            <div class="container" align="center" style="padding: 10px;">
+                <h3> Welcome to Muscle Up Admin Dashboard </h3>
+            </div>
+            <div class="card" align="center">
+                <h4 class="card-header" style="color: orangered;">Website Overview</h4>
+                <div class="card-body" align="center">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-feather"></i><?php echo $article_count?></h4>
+                                <a href="<?php echo base_url('index.php/admin/admin_articles')?>"><h4><i class="fas fa-feather"></i><?php echo $article_count?></h4></a>
                                 <p>Articles</p>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-paper-plane"></i> 5</h4>
-                                <p>Forum Posts</p>
+                                <a href="<?php echo base_url('index.php/admin/notifications')?>"><h4><i class="fas fa-bell"></i></h4></a>
+                                <p>Notifications</p>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6" style="margin-top: 20px;">
                             <div class="card bg-light card-body dash-box">
-                                <h4><i class="fas fa-book"></i> <?php echo $article_count?></h4>
-                                <p>Enquiries</p>
+                                <a href="<?php echo base_url('index.php/admin/schedule')?>"><h4><i class="fas fa-clipboard-list"></i></h4></a>
+                                <p>Manage Schedule</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 20px;">
+                            <div class="card bg-light card-body dash-box">
+                                <a href="<?php echo base_url('index.php/admin/admin_manage_users')?>"><h4><i class="fas fa-users-cog"></i></h4></a>
+                                <p>Manage Users</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <h4 class="card-header">Recent Users</h4>
-            <div class="card-body">
-                <table class="table">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
