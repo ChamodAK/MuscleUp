@@ -7,18 +7,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <br>
 <br>
 <div class="row mt-500">
-
+<div class="container">
+<p aligne="right"><h1>Welcome to Muscle Up Fitness Center Gallery</h1></p>
+</div>
+<div class="container">
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_1scott-webb-22697-unsplash.jpg" alt="First slide">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_cwu4ogqu4aafyru.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_trust-tru-katsande-592917-unsplash.jpg" alt="Second slide">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_65f1d8858b0daa15e6714ae6cb3de966.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_victor-freitas-546919-unsplash.jpg" alt="Third slide">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_instalaciones-clubhotel-riu-papayas_tcm56-159402.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_1-1p91q64135 (1).jpg" alt="Forth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_bh-gyms-ideas.jpg" alt="Fifth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_243a1665.jpg" alt="Sixth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_243a1992.jpg" alt="Seventh slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_1maxresdefault_1.jpg" alt="Eighth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_2maxresdefault.jpg" alt="Nineth slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="<?php echo base_url() ?>asset/gallery_images/rsz_saani-1.jpg" alt="Tenth slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -34,6 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+<!--
 </div>
 <br>
 <br>
@@ -46,7 +71,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <img src="<?php echo base_url() ?>asset/gallery_images/rsz_appetite-bowl-centimeter-1332189.jpg" class="img-fluid" alt="">
 <img src="<?php echo base_url() ?>asset/gallery_images/rsz_chuttersnap-1111548-unsplash (1).jpg" class="img-fluid" alt="">
 <img src="<?php echo base_url() ?>asset/gallery_images/rsz_danielle-cerullo-782569-unsplash.jpg" class="img-fluid" alt="">
+-->
 
+<br>
 
-</div>
 <?php include 'footer.php'?>
+</div>

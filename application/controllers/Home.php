@@ -58,11 +58,40 @@ class Home extends CI_Controller {
 
 
     public function my_profile() {
-        $this->load->view('user/my_profile_main');
+
+	    $id = $this->session->userdata('id');
+
+	    $this->load->model('Model_My_Profile');
+	    $result = $this->Model_My_Profile->get_my_profile($id);
+
+        if($result!=false) {
+
+            $data['profile'] = array(
+                'id' => $id,
+                'name' => $result->name,
+                'username' => $result->username,
+                'email' => $result->email,
+                'dob'=>$result->dob,
+                'nic' => $result->nic,
+                'address' => $result->address,
+                'contactNo' => $result->contactNo
+            );
+
+            $this->load->view('user/my_profile_main', $data);
+
+        }
+        else {
+            echo "Something went wrong !";
+        }
+
     }
 
     public function classes() {
         $this->load->view('classes');
+    }
+
+    public function about_us() {
+        $this->load->view('about_us');
     }
 
 }

@@ -60,6 +60,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="nav-item">
                 <a class="nav-link <?php if($page=='success_stories'){echo " active";}?>" href="<?php echo base_url('index.php/home/success_stories') ?>">Success Stories</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='about_us'){echo " active";}?>" href="<?php echo base_url('index.php/home/about_us') ?>">About Us</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav navbar-right" style="margin-right: 10px;">
@@ -80,8 +83,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo $this->session->userdata('username');
                 echo "</a>\n";
                 echo "<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
-                echo "<a class=\"dropdown-item\" href=\"". base_url('index.php/home/my_profile');
-                echo "\">Profile</a>\n";
+                if($this->session->userdata('flag')!='a') {
+                    echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/home/my_profile');
+                    echo "\">Profile</a>\n";
+                }
                 echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/login/user_logout');
                 echo "\">Logout</a>\n";
                 echo " </div>";

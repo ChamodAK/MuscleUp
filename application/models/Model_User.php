@@ -39,5 +39,39 @@ class Model_user extends CI_Model {
 
     }
 
+    function insert_fitness_data () {
+
+        $data = array(
+
+            'userId' => $this->input->post('id'),
+            'weight' => $this->input->post('weight'),
+            'height' => $this->input->post('height'),
+            'schedule' => $this->input->post('schedule'),
+            'attendance' => $this->input->post('attendence'),
+            'remarks' => $this->input->post('remark'),
+            'checkedDate' => $this->input->post('checked_date'),
+        );
+
+        return $this->db->insert('fitness', $data);
+
+    }
+
+    function fetch_fitness_data($id)
+    {
+
+        $query = $this->db->query("SELECT * FROM fitness WHERE userId = '$id' ORDER BY checkedDate DESC");
+        return $query;
+    }
+    function fetch_users_data(){
+        $query = $this->db->get("users");
+        return $query;
+    }
+    function delete_user($userid){
+        $this->db->where('id', $userid);
+        $this->db->delete("users");
+        $row = $this->db->affected_rows();
+        return $row;
+    }
+
 
 }

@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="<?php echo base_url('index.php/home'); ?>">
         <img src="<?php echo base_url() ?>asset/images/Gym Logo.jpg" width="30" height="30" class="rounded-circle" alt="image">
-        Muscle Up
+         Muscle Up
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a class="nav-link <?php if($page=='forum'){echo " active";}?>" href="<?php echo base_url('index.php/home/forum') ?>">Forum</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link <?php if($page=='gallery'){echo " active";}?>" href="<?php echo base_url('index.php/home/get_photos') ?>">Gallery</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link <?php if($page=='success_stories'){echo " active";}?>" href="<?php echo base_url('index.php/home/success_stories') ?>">Success Stories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if($page=='about_us'){echo " active";}?>" href="<?php echo base_url('index.php/home/about_us') ?>">About Us</a>
             </li>
         </ul>
 
@@ -77,8 +83,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo $this->session->userdata('username');
                 echo "</a>\n";
                 echo "<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
-                echo "<a class=\"dropdown-item\" href=\"". base_url('index.php/home/my_profile');
-                echo "\">Profile</a>\n";
+                if($this->session->userdata('flag')!='a') {
+                    echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/home/my_profile');
+                    echo "\">Profile</a>\n";
+                }
                 echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/login/user_logout');
                 echo "\">Logout</a>\n";
                 echo " </div>";
