@@ -80,8 +80,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo $this->session->userdata('username');
                 echo "</a>\n";
                 echo "<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
-                echo "<a class=\"dropdown-item\" href=\"". base_url('index.php/home/my_profile');
-                echo "\">Profile</a>\n";
+                if($this->session->userdata('flag')!='a') {
+                    echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/home/my_profile');
+                    echo "\">Profile</a>\n";
+                }
                 echo "<a class=\"dropdown-item\" href=\"" . base_url('index.php/login/user_logout');
                 echo "\">Logout</a>\n";
                 echo " </div>";
