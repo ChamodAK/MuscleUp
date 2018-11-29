@@ -1,6 +1,6 @@
 <?php $page = 'forum'; include 'header.php';?>
 
-    <header class="masthead" style="background-image: url('<?= base_url('asset/images/forum.jpg')?>');">
+    <header class="masthead" style="background-image: url('<?= base_url('asset/images/about_us.jpg')?>');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-left">

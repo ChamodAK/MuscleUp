@@ -6,27 +6,47 @@ class Admin extends MY_Controller {
 
         $this->load->model('Model_Article');
         $article_count = $this->Model_Article->count_articles();
-
-        $this->load->model('Model_Forum');
-        $post_count = $this->Model_Forum->count_posts();
-
-        $data = array('article_count' => $article_count , 'post_count' => $post_count);
+        $data = array('article_count' => $article_count);
         $this->load->view('admin/admin_main' , $data);
     }
 
     public function admin_articles() {
 
         $this->load->model('Model_Article');
+
+        // If record delete request is submitted
+        if($this->input->post('bulk_delete_submit')){
+            // Get all selected IDs
+            $ids = $this->input->post('checked_id');
+
+            // If id array is not empty
+            if(!empty($ids)){
+                // Delete records from the database
+                $delete = $this->Model_Article->delete_articles($ids);
+
+                // If delete is successful
+                if($delete){
+                    $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Selected articles have been deleted successfully.</div>');
+                    //$result['statusMsg'] = 'Selected articles have been deleted successfully.';
+                }else{
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Oops! Something went wrong </div>');
+                    //$result['statusMsg'] = 'Some problem occurred, please try again.';
+                }
+            }else{
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Select at least 1 record to delete.</div>');
+                //$result['statusMsg'] = 'Select at least 1 record to delete.';
+            }
+        }
         $result['articles'] = $this->Model_Article->get_articles();
 
-        if($result) {
-            $this->load->view('admin/admin_articles', $result);
+        if($result!=false) {
+
+            $this->load->view('admin/admin_articles' , $result);
+
         }
         else {
-            echo "OOps!! Something went wrong!";
+            echo "Something went wrong !";
         }
-
-
 
     }
 
@@ -86,16 +106,7 @@ class Admin extends MY_Controller {
     }
 
     public function admin_forum() {
-
-        $this->load->model('Model_Forum');
-        $result['posts'] = $this->Model_Forum->get_posts();
-
-        if($result) {
-            $this->load->view('admin/admin_forum', $result);
-        }
-        else {
-            echo "OOps!! Something went wrong!";
-        }
+        $this->load->view('admin/admin_forum');
     }
 
     public function admin_enquiries() {
@@ -264,97 +275,6 @@ class Admin extends MY_Controller {
 
     }
 
-<<<<<<< HEAD
-    public function delete_post($id) {
-
-        $data['id'] = $id;
-        $this->load->view('admin/delete_post',$data);
-
-
-    }
-
-    public function delete_post_confirm($id) {
-
-
-        $this->load->model('Model_Admin');
-        $result = $this->Model_Admin->delete_schedule_confirm($id);
-
-        if($result) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Post Deleted Successfully! </div>');
-            redirect('admin/admin_forum');
-        }
-        else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
-            redirect('admin/admin_forum');
-        }
-
-    }
-
-    public function delete_article($id) {
-
-        $data['id'] = $id;
-        $this->load->view('admin/delete_article',$data);
-
-
-    }
-
-    public function delete_article_confirm($id) {
-
-
-        $this->load->model('Model_Admin');
-        $result = $this->Model_Admin->delete_article_confirm($id);
-
-        if($result) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Schedule Deleted Successfully! </div>');
-            redirect('admin/admin_articles');
-        }
-        else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
-            redirect('admin/admin_articles');
-        }
-
-    }
-
-    public function edit_article($id) {
-
-        $this->load->model('Model_Article');
-        $result = $this->Model_Article->get_full_article($id);
-
-        if($result!=false) {
-
-            $data['article'] = array(
-                'id' => $id,
-                'title' => $result->title,
-                'content' => $result->details
-            );
-
-            $this->load->view('admin/edit_article', $data);
-
-        }
-        else {
-            echo "Something went wrong !";
-        }
-
-    }
-
-    public function add_edit_article() {
-
-        $id = $this->input->post('id');
-        $title = $this->input->post('title');
-        $details = $this->input->post('content');
-
-
-        $this->load->model('Model_Admin');
-        $result = $this->Model_Admin->add_edit_article($id, $title, $details);
-
-        if($result) {
-            $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> Schedule Added Successfully! </div>');
-            redirect('admin/admin_articles');
-        }
-        else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center" role="alert"> Operation Failed! </div>');
-            redirect('admin/admin_articles');
-=======
     public function admin_schedule() {
         $this->load->view('admin/admin_schedule');
     }
@@ -412,7 +332,6 @@ class Admin extends MY_Controller {
         else{
             $m2 = "Invalide UserID";
             $this->session->set_flashdata('msg', '<div class="alert alert-primary text-center" role="alert"> $m2 </div>');
->>>>>>> 86ebfb0118cb7aa06b8f3e5ce46064691f20ace1
         }
 
     }

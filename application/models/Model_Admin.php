@@ -69,31 +69,4 @@ class Model_Admin extends CI_Model {
 
     }
 
-    function delete_post_confirm($id) {
-
-        return $this->db->delete('forum', array('id' => $id));
-
-
-    }
-
-    function delete_article_confirm($id) {
-
-        return $this->db->delete('article', array('id' => $id));
-
-
-    }
-
-    function add_edit_article($id, $title, $details) {
-
-        $data = array(
-            'title' => $title,
-            'details' => $details
-        );
-
-        $this->db->where('id', $id);
-        return $this->db->update('article', $data);
-
-
-    }
-
 }

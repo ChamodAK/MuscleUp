@@ -30,13 +30,8 @@ if($this->session->flashdata('msg')) {
                         </div>
                         <div class="col-md-6" style="margin-top: 20px;">
                             <div class="card bg-light card-body dash-box">
-<<<<<<< HEAD
-                                <h4><i class="fas fa-paper-plane"></i><?php echo $post_count?></h4>
-                                <p>Forum Posts</p>
-=======
                                 <a href="<?php echo base_url('index.php/admin/schedule')?>"><h4><i class="fas fa-clipboard-list"></i></h4></a>
                                 <p>Manage Schedule</p>
->>>>>>> 86ebfb0118cb7aa06b8f3e5ce46064691f20ace1
                             </div>
                         </div>
                         <div class="col-md-6" style="margin-top: 20px;">

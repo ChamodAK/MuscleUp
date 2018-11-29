@@ -15,6 +15,22 @@ class Home extends CI_Controller {
         $this->load->view('sign_up');
     }
 
+    public function forum() {
+
+        $this->load->model('Model_Forum');
+        $result['posts'] = $this->Model_Forum->get_posts();
+
+        if($result!=false) {
+
+            $this->load->view('forum', $result);
+
+        }
+        else {
+            echo "Something went wrong !";
+        }
+
+    }
+
     public function success_stories() {
         $this->load->view('stories/success_stories');
     }
@@ -39,22 +55,6 @@ class Home extends CI_Controller {
         $this->load->view('gallery');
     
 }
-
-    public function forum() {
-
-        $this->load->model('Model_Forum');
-        $result['posts'] = $this->Model_Forum->get_posts();
-
-        if($result!=false) {
-
-            $this->load->view('forum', $result);
-
-        }
-        else {
-            echo "Something went wrong !";
-        }
-
-    }
 
 
     public function my_profile() {
